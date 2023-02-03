@@ -10,7 +10,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import sys
 from selenium.webdriver.common.keys import Keys
 
-sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\magazyn")
+sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
 
 from locators import locators
 from sites import main_page
@@ -35,8 +35,36 @@ def search_department(searched_department):
     driver.find_element(By.XPATH, locators.magnifier_button).click()
     driver.find_element(By.XPATH, locators.magnifier_input).send_keys(searched_department)
     time.sleep(1)
-    driver.find_element(By.XPATH, locators.found_department).text
+    
 
-def test_add():
-    add_new_department('siemka')
-    search_department('siemka')
+
+def edit_department(edited_department):
+    driver.find_element(By.XPATH, locators.edit_department_button).click()
+    name = driver.find_element(By.NAME, locators.new_department_input)
+    for letter in name.get_attribute("class"):
+        name.send_keys(Keys.BACKSPACE)
+    name.send_keys(edited_department)
+    driver.find_element(By.XPATH, locators.submit_edit_employee_button).click()
+
+@pytest.mark.parametrize("department_name, is_added", [
+    ("Graficy", True),
+    ("", False),
+    ("asdcfdasertorportkmvbmfkrtkrfrtyops", False)
+]) 
+
+def test_add_department(department_name, is_added):
+    add_new_department(department_name)
+    if is_added == True:
+        search_department(department_name)
+        finding_department_name = driver.find_element(By.XPATH, locators.found_department)
+        assert department_name == finding_department_name.text
+    else:
+        print(department_name)
+
+@pytest.mark.parametrize("edited_department, is_edited", [
+    ("QA",  True),
+    ("", False),
+    ("this_string_has_more_than_32_characters", False)
+]) 
+def test_edit_department(edited_department, is_edited):
+    edit_department(edited_department)

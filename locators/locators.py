@@ -17,3 +17,5 @@ submit_adding_new_department = "//button[text()='Dodaj']" # XPATH
 magnifier_button = "//button[contains(@class,'MuiButtonBase-root MuiIconButton-root')]" # XPATH
 magnifier_input = "//input[contains(@class,'MuiInputBase-input MuiInput-input')]" # XPATH
 found_department = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
+edit_department_button = "//button[text()='Edytuj']" # XPATH
+submit_edit_department_button = "//button[text()='Zapisz']" #XPATH
