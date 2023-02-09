@@ -1,3 +1,4 @@
+# EMPLOYEES MODULE
 pracownicy_button = "//span[@class='toggle-text'][normalize-space()='Pracownicy']" # XPATH
 add_employee_button = "//button[@type='button']" # XPATH
 new_employee_name_input = "name" # NAME
@@ -9,6 +10,8 @@ filter_lastname_input = "(//input[contains(@class,'MuiInputBase-input MuiInput-i
 found_employee_name = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
 found_employee_lastname = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[3]" # XPATH
 edit_employee_button = "//button[text()='Edytuj']" # XPATH
+
+# DEPARTMENTS MODULE
 submit_edit_employee_button = "//button[text()='Zapisz']" # XPATH
 działy_button = "//a[@href='/departments']//div[@class='side-menu-toggle']" # XPATH
 add_new_department_button = "//button[@type='button']" # XPATH
@@ -19,3 +22,11 @@ magnifier_input = "//input[contains(@class,'MuiInputBase-input MuiInput-input')]
 found_department = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
 edit_department_button = "//button[text()='Edytuj']" # XPATH
 submit_edit_department_button = "//button[text()='Zapisz']" #XPATH
+
+# SOURCES OF FOUNDING MODULE
+zrodla_finansowania_button = "//span[text()='Źródła Finansowania']" # XPATH
+add_source_of_founding_button = "//button[@type='button']" # XPATH
+source_of_founding_input = "name" # NAME
+submit_new_source_of_founding_button = "//button[text()='Dodaj']" # XPATH
+edit_source_of_founding_button = "//button[text()='Edytuj']" # XPATH
+found_source_of_founding_name = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH

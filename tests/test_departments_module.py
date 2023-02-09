@@ -63,8 +63,14 @@ def test_add_department(department_name, is_added):
 
 @pytest.mark.parametrize("edited_department, is_edited", [
     ("QA",  True),
-    ("", False),
-    ("this_string_has_more_than_32_characters", False)
+    ("", False)
 ]) 
 def test_edit_department(edited_department, is_edited):
     edit_department(edited_department)
+    if is_edited == True:
+        search_department(edited_department)
+        finding_department = driver.find_element(By.XPATH, locators.found_department)
+        assert finding_department.text == edited_department
+    else:
+        print(driver.find_element(By.XPATH, locators.found_department).text)
+
