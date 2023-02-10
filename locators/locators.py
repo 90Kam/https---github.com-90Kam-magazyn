@@ -30,3 +30,4 @@ source_of_founding_input = "name" # NAME
 submit_new_source_of_founding_button = "//button[text()='Dodaj']" # XPATH
 edit_source_of_founding_button = "//button[text()='Edytuj']" # XPATH
 found_source_of_founding_name = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
+submit_edited_source_of_founding = "//button[text()='Zapisz']" # XPATH

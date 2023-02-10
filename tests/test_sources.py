@@ -33,7 +33,7 @@ class TestAddSource:
 
     @pytest.mark.parametrize("nazwa, status",[
         ('Kamil', True),
-        ('yogi', False)
+        ('', False)
     ])
     def test_add_source_of_founding(self, nazwa, status):
         driver.find_element(By.XPATH, locators.add_source_of_founding_button).click()
@@ -42,10 +42,34 @@ class TestAddSource:
         if status == True:
             driver.find_element(By.XPATH, locators.magnifier_button).click()
             driver.find_element(By.XPATH, locators.magnifier_input).send_keys(nazwa)
-            time.sleep(1)
+            wait = WebDriverWait(driver, 10)
+            wait.until(EC.invisibility_of_element_located((By.XPATH, "//div[contains(@class,'Toastify__toast-icon Toastify--animate-icon')]/following-sibling::div[1]")))
             finding_source_of_founding = driver.find_element(By.XPATH, locators.found_source_of_founding_name)
             assert nazwa == finding_source_of_founding.text
 
         else:
-            time.sleep(2)
             print(driver.find_element(By.XPATH, locators.found_source_of_founding_name).text)
+
+    @pytest.mark.parametrize("edited_source_of_founding, status",[
+        ('wlasne', True),
+        ('', False)
+    ])
+
+    def test_edit_source_of_founding(self, edited_source_of_founding, status):
+        driver.refresh()
+        time.sleep(1)
+        driver.find_element(By.XPATH, locators.edit_source_of_founding_button).click()
+        time.sleep(1)
+        name = driver.find_element(By.NAME, locators.source_of_founding_input)
+        name2 = driver.find_element(By.XPATH, locators.found_source_of_founding_name).text
+        letter = 0
+        while letter < len(name2):
+            name.send_keys(Keys.BACKSPACE)
+            letter = letter + 1
+        name.send_keys(edited_source_of_founding)
+        driver.find_element(By.XPATH, locators.submit_edited_source_of_founding).click()
+        if status == True:
+            driver.refresh()
+            assert driver.find_element(By.XPATH, locators.found_source_of_founding_name).text == edited_source_of_founding
+        else:
+            print(edited_source_of_founding)
