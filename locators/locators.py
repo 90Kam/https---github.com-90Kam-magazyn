@@ -31,3 +31,13 @@ submit_new_source_of_founding_button = "//button[text()='Dodaj']" # XPATH
 edit_source_of_founding_button = "//button[text()='Edytuj']" # XPATH
 found_source_of_founding_name = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
 submit_edited_source_of_founding = "//button[text()='Zapisz']" # XPATH
+
+# UNITS MODULE
+jednostki_button = "//span[text()='Jednostki']" # XPATH
+add_unit_button = "//button[contains(@class,'MuiButtonBase-root MuiButton-root')]" # XPATH
+submit_new_unit = "//div[contains(@class,'MuiContainer-root MuiContainer-maxWidthXs')]//button[1]" # XPATH
+edit_unit_button = "//button[text()='Edytuj']" # XPATH
+edit_unit_input = "name" # NAME
+add_unit_input = edit_unit_input
+submit_edit_unit_button = "//button[text()='Zapisz']" # XPATH
+founded_unit = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
