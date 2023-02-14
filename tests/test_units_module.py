@@ -10,8 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import sys
 from selenium.webdriver.common.keys import Keys
 
-# sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\magazyn")
-sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
+sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\nowy_magazyn\\https---github.com-90Kam-magazyn")
+# sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
 from locators import locators
 from sites import main_page
 from credentials import credentials
@@ -43,8 +43,10 @@ class TestUnitsModule:
             driver.find_element(By.XPATH, locators.magnifier_input).send_keys(nazwa)
             wait = WebDriverWait(driver, 10)
             wait.until(EC.invisibility_of_element_located((By.XPATH, "//div[contains(@class,'Toastify__toast-icon Toastify--animate-icon')]/following-sibling::div[1]")))
+            time.sleep(1)
             finding_source_of_founding = driver.find_element(By.XPATH, locators.founded_unit)
             assert nazwa == finding_source_of_founding.text
 
         else:
             print(driver.find_element(By.XPATH, locators.founded_unit).text)
+print('test dodawania jednostki')

@@ -10,8 +10,9 @@ from selenium.webdriver.support import expected_conditions as EC
 import sys
 from selenium.webdriver.common.keys import Keys
 
+sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\nowy_magazyn\\https---github.com-90Kam-magazyn")
 # sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\magazyn")
-sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
+# sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
 from locators import locators
 from sites import main_page
 from credentials import credentials
@@ -32,7 +33,7 @@ class TestAddSource:
         driver.quit()
 
     @pytest.mark.parametrize("nazwa, status",[
-        ('Kamil', True),
+        ('Adam', True),
         ('', False)
     ])
     def test_add_source_of_founding(self, nazwa, status):
@@ -70,6 +71,7 @@ class TestAddSource:
         driver.find_element(By.XPATH, locators.submit_edited_source_of_founding).click()
         if status == True:
             driver.refresh()
+            time.sleep(1)
             assert driver.find_element(By.XPATH, locators.found_source_of_founding_name).text == edited_source_of_founding
         else:
             print(edited_source_of_founding)

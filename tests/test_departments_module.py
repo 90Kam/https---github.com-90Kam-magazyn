@@ -10,8 +10,8 @@ from selenium.webdriver.support import expected_conditions as EC
 import sys
 from selenium.webdriver.common.keys import Keys
 
-sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
-
+# sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
+sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\nowy_magazyn\\https---github.com-90Kam-magazyn")
 from locators import locators
 from sites import main_page
 from credentials import credentials
@@ -32,13 +32,15 @@ def add_new_department(department_name):
 
     
 def search_department(searched_department):
+    time.sleep(0.5)
     driver.find_element(By.XPATH, locators.magnifier_button).click()
     driver.find_element(By.XPATH, locators.magnifier_input).send_keys(searched_department)
-    time.sleep(1)
+    time.sleep(0.5)
     
 
 
 def edit_department(edited_department):
+    time.sleep(1)
     driver.find_element(By.XPATH, locators.edit_department_button).click()
     name = driver.find_element(By.NAME, locators.new_department_input)
     for letter in name.get_attribute("class"):
