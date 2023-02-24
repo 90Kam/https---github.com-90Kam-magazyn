@@ -11,7 +11,9 @@ import sys
 from selenium.webdriver.common.keys import Keys
 
 # sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\magazyn")
-sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
+# sys.path.insert(0,"C:\\Users\\Kam and Judy\\magazyn\\https---github.com-90Kam-magazyn")
+sys.path.insert(0,"C:\\Users\\VRT\\Desktop\\nowy_magazyn\\https---github.com-90Kam-magazyn")
+
 from locators import locators
 from sites import main_page
 from credentials import credentials
@@ -81,6 +83,7 @@ def edit_employee(edited_employee_name, edited_employee_lastname):
 ]) 
 def test_add_employee(name, lastname, is_added):
     add_new_employee(name, lastname)
+    print('siemka')
     if is_added == True:
         searching_employee(name, lastname)
         finding_name = driver.find_element(By.XPATH, locators.found_employee_name)
