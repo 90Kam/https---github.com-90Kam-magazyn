@@ -45,6 +45,7 @@ class TestAddSource:
             driver.find_element(By.XPATH, locators.magnifier_input).send_keys(nazwa)
             wait = WebDriverWait(driver, 10)
             wait.until(EC.invisibility_of_element_located((By.XPATH, "//div[contains(@class,'Toastify__toast-icon Toastify--animate-icon')]/following-sibling::div[1]")))
+            time.sleep(1)
             finding_source_of_founding = driver.find_element(By.XPATH, locators.found_source_of_founding_name)
             assert nazwa == finding_source_of_founding.text
 

@@ -49,7 +49,7 @@ class TestDepartmentsModule:
             driver.find_element(By.XPATH, locators.magnifier_input).send_keys(department_name)
             time.sleep(0.5)
             finding_department_name = driver.find_element(By.XPATH, locators.found_department)
-            assert 'department_name' == finding_department_name.text
+            assert department_name == finding_department_name.text
         else:
             print(department_name)
 

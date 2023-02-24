@@ -86,6 +86,7 @@ def test_add_employee(name, lastname, is_added):
     print('siemka')
     if is_added == True:
         searching_employee(name, lastname)
+        time.sleep(1)
         finding_name = driver.find_element(By.XPATH, locators.found_employee_name)
         finding_lastname = driver.find_element(By.XPATH, locators.found_employee_lastname)
         assert name == finding_name.text and lastname == finding_lastname.text
