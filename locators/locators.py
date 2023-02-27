@@ -41,3 +41,19 @@ edit_unit_input = "name" # NAME
 add_unit_input = edit_unit_input
 submit_edit_unit_button = "//button[text()='Zapisz']" # XPATH
 founded_unit = "(//td[contains(@class,'MuiTableCell-root MuiTableCell-body')])[2]" # XPATH
+
+# PRZYJECIA MODULE
+przyjecia_button = "//span[text()='Przyjęcia']" # XPATH
+dodaj_przyjecie_button = "//button[contains(@class,'MuiButtonBase-root MuiButton-root')]" # XPATH
+nr_dokumentu_input = "invoiceNumber" # NAME
+komentarz_input = "comment" # NAME
+wybierz_kontrahenta_button = "//button[text()='Wybierz kontrahenta / klienta']" # XPATH
+wybierz_projekt_button = "//button[text()='Wybierz Projekt']" # XPATH
+wybierz_zrodlo_finansowania_button = "//button[text()='Wybierz Źródło finansowania']" # XPATH
+wybierz_przedmioty_button = "//button[text()='Wybierz przedmioty']" # XPATH
+calendar_icon = "span#modal-conent>div>div>div>div>div:nth-of-type(3)>div>div>div>button" # CSS
+day_button = "//button[text()='10']" # XPATH
+wybierz_first_button = "//button[text()='Wybierz']" # XPATH
+confirm_dodaj_przyjecie_button = "//button[text()='Dodaj']" # XPATH
+x_button = "(//button[text()='X'])[2]" # XPATH
+x_button2 = "//button[text()='X']" # XPATH
