@@ -48,7 +48,7 @@ dodaj_przyjecie_button = "//button[contains(@class,'MuiButtonBase-root MuiButton
 nr_dokumentu_input = "invoiceNumber" # NAME
 komentarz_input = "comment" # NAME
 wybierz_kontrahenta_button = "//button[text()='Wybierz kontrahenta / klienta']" # XPATH
-wybierz_projekt_button = "//button[text()='Wybierz Projekt']" # XPATH
+wybierz_projekt_button = "//button[text()='Wybierz Projekt']" # XPATH 
 wybierz_zrodlo_finansowania_button = "//button[text()='Wybierz Źródło finansowania']" # XPATH
 wybierz_przedmioty_button = "//button[text()='Wybierz przedmioty']" # XPATH
 calendar_icon = "span#modal-conent>div>div>div>div>div:nth-of-type(3)>div>div>div>button" # CSS
@@ -57,3 +57,19 @@ wybierz_first_button = "//button[text()='Wybierz']" # XPATH
 confirm_dodaj_przyjecie_button = "//button[text()='Dodaj']" # XPATH
 x_button = "(//button[text()='X'])[2]" # XPATH
 x_button2 = "//button[text()='X']" # XPATH
+
+# WYDANIA WEWNETRZNE MODULE
+wydania_wew_button = "//span[text()='Wydania Wewnętrzne']" # XPATH
+dodaj_wydanie_wew_button = "//button[@type='button']" # XPATH
+wybierz_pracownika_button = "//button[text()='Wybierz Pracownika']" # XPATH
+confirm_dodaj_wydanie_wew_button = "//button[text()='Dodaj']" # XPATH
+
+# WYDANIA ZEWNETRZNE MODULE
+wydania_zew_button = "//span[text()='Wydania Zewnętrzne']" # XPATH
+dodaj_wydanie_zew_button = "//button[@type='button']" # XPATH
+confirm_dodaj_wydanie_zew_button = "//button[text()='Dodaj']" # XPATH
+
+# ZWROTY MODULE
+zwroty_button = "//span[text()='Zwroty']" # XPATH
+dodaj_zwrot_button = "//button[@type='button']" # XPATH
+confirm_dodaj_zwrot_button = "//button[text()='Dodaj']" # XPATH
